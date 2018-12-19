@@ -2,9 +2,21 @@ import React from 'react';
 import { actors } from '../data';
 
 const Actors = () => {
+  const renderActor = actor => {
+    return(
+      <div>
+        <h2>Name: {actor.name}</h2>
+        <h4>Movies:</h4>
+        <ul>
+          {actor.movies.map(movie => <li>{movie}</li>)}
+        </ul>
+      </div>
+    )
+  }
   return (
     <div>
-      {/*{code here}*/}
+      <h1>Actors Page</h1>
+      {actors.map(renderActor)}
     </div>
   );
 };
